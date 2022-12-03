@@ -1,0 +1,40 @@
+---
+title: About Page
+description:
+links:
+  - text: My Twitter
+    url: https://twitter.com/geauxweisbeck4
+  - text: My GitHub profile
+    url: https://github.com/geauxweisbeck4
+---
+
+<main>
+  <header class="mb-10 mt-10">
+    <h1 class="text-4xl text-rose-500 font-bold ml-8 mt-6 mb-1">I'm a 31 Year Old Full Stack Developer</h1>
+    <h2 class="text-3xl text-sky-300 font-bold ml-16 mb-1">Currently living in Raleigh, NC with my partner and best friend Lisa</h2>
+    <h3 class="text-2xl text-emerald-500 font-bold ml-32 mb-1">My ideal tech stack is Deno, React, and an SSG with SSR like Next.js, Astro JS, or Qwik City</h3>
+    <h4 class="text-xl text-orange-400 font-bold ml-48 mb-1">My favorite hobbies are skiing, reading, writing, watching sports, messing around with my Raspberry Pi and coding side projects</h4>
+    <h3 class="text-2xl text-emerald-500 font-bold ml-32 mb-1">I am outgoing and love being around people, but would consider myself to be an ambivert</h3>
+    <h2 class="text-3xl text-sky-300 font-bold ml-16 mb-1">Lisa and I have a dog named Magnolia as well as two cats, Beaux & Zu</h2>
+    <h1 class="text-4xl text-rose-500 font-bold ml-8 mb-1">Seeking employment & freelance clients</h1>
+  </header>
+
+  <h2>List of Websites</h2>
+
+  <p>Here is a list of websites that I have created - it is almost comprehensive and I try to keep it up to date as much as I can.</p>
+
+  <h2>Donate or Purchase to Help Me Out<h2>
+
+  <p>You can donate and help me afford to do open source work and create things outside of normal work. Any of the pages or links will get you access to my content and you can purchase merchandise as well to provide you something awesome in return! Let me know if there is anything you think I should add - I am always open to feedback.</p>
+
+
+  <ul>
+    {% for link in links %}
+    <li>
+      <a href="{{ link.url }}">
+        {{ link.text }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
