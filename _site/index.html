@@ -70,10 +70,10 @@ html {
   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   line-height: 1.5;
 }
-h1, h2, p {
+h1, h2, p, h3 {
   margin: 0;
 }
-h1, h2 {
+h1, h2, h3 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -89,9 +89,46 @@ ul {
   margin: 0;
   padding: 0;
 }
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
+}
+.bg-blue-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
 }
 .bg-emerald-700 {
   --tw-bg-opacity: 1;
@@ -109,17 +146,33 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(236, 72, 153, var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(14, 165, 233, var(--tw-bg-opacity));
+}
+.border-teal-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(20, 184, 166, var(--tw-border-opacity));
+}
 .border-pink-500 {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
-.border-emerald-300 {
-  --tw-border-opacity: 1;
-  border-color: rgba(110, 231, 183, var(--tw-border-opacity));
-}
 .hover\:border-emerald-700:hover {
   --tw-border-opacity: 1;
   border-color: rgba(4, 120, 87, var(--tw-border-opacity));
+}
+.border-emerald-300 {
+  --tw-border-opacity: 1;
+  border-color: rgba(110, 231, 183, var(--tw-border-opacity));
 }
 .hover\:border-pink-500:hover {
   --tw-border-opacity: 1;
@@ -131,14 +184,33 @@ ul {
 .rounded {
   border-radius: 0.25rem;
 }
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-2xl {
+  border-radius: 1rem;
+}
 .border-solid {
   border-style: solid;
 }
 .border-3 {
   border-width: 3px;
 }
+.border {
+  border-width: 1px;
+}
 .border-b-3 {
   border-bottom-width: 3px;
+}
+.box-border {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 .flex {
   display: -webkit-box;
@@ -152,6 +224,20 @@ ul {
   display: -webkit-inline-flex;
   display: inline-flex;
 }
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+.basis-1\/2 {
+  flex-basis: 50%;
+}
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
 .flex-col {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -163,6 +249,12 @@ ul {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+.items-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 .items-center {
   -webkit-box-align: center;
@@ -197,11 +289,14 @@ ul {
 .font-semibold {
   font-weight: 600;
 }
+.h-auto {
+  height: auto;
+}
 .h-12 {
   height: 3rem;
 }
-.h-100vh {
-  height: 100vh;
+.h-56 {
+  height: 14rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -215,16 +310,41 @@ ul {
   font-size: 3.75rem;
   line-height: 1;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.leading-6 {
+  line-height: 1.5rem;
+}
 .list-none {
   list-style-type: none;
+}
+.m-auto {
+  margin: auto;
+}
+.m-0 {
+  margin: 0px;
+}
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -237,6 +357,9 @@ ul {
 }
 .mr-8 {
   margin-right: 2rem;
+}
+.mt-14 {
+  margin-top: 3.5rem;
 }
 .ml-20 {
   margin-left: 5rem;
@@ -256,11 +379,14 @@ ul {
 .mr-4 {
   margin-right: 1rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
 .mt-10 {
   margin-top: 2.5rem;
 }
-.mt-4 {
-  margin-top: 1rem;
+.mt-3 {
+  margin-top: 0.75rem;
 }
 .max-h-max {
   max-height: -webkit-max-content;
@@ -273,8 +399,24 @@ ul {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-xs {
+  max-width: 20rem;
+}
+.object-cover {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 .p-2 {
   padding: 0.5rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.p-0 {
+  padding: 0px;
 }
 .py-2 {
   padding-top: 0.5rem;
@@ -288,6 +430,26 @@ ul {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .pl-20 {
   padding-left: 5rem;
 }
@@ -300,8 +462,29 @@ ul {
 .pb-20 {
   padding-bottom: 5rem;
 }
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+.pt-14 {
+  padding-top: 3.5rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
 .relative {
   position: relative;
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0/0.1),0 2px 4px -2px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
 }
 .text-left {
   text-align: left;
@@ -353,6 +536,22 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(244, 63, 94, var(--tw-text-opacity));
 }
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
+.text-teal-400 {
+  --tw-text-opacity: 1;
+  color: rgba(45, 212, 191, var(--tw-text-opacity));
+}
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
@@ -366,22 +565,54 @@ ul {
 .w-60 {
   width: 15rem;
 }
-.gap-6 {
-  grid-gap: 1.5rem;
-  gap: 1.5rem;
+.w-1\/2 {
+  width: 50%;
+}
+.w-\[80vw\] {
+  width: 80vw;
+}
+.gap-5 {
+  grid-gap: 1.25rem;
+  gap: 1.25rem;
+}
+.ease-in-out {
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media (min-width: 768px) {
-  .md\:flex-row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-    flex-direction: row;
+  .md\:max-w-none {
+    max-width: none;
+  }
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:h-60 {
+    height: 15rem;
+  }
+  .lg\:gap-7 {
+    grid-gap: 1.75rem;
+    gap: 1.75rem;
+  }
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }</style></head>
   <body>
     <div class="bg-slate-900 text-slate-50 max-h-max">
-        <header>
+        <header class="border-b-3 border-solid border-teal-500 bg-blue-900 rounded-large">
         <nav class="relative w-full flex flex-wrap items-center pl-20 justify-between justify-items-center list-none py-2 text-yellow-400">
             <div class="w-full flex flex-wrap justify-center items-center container-fluid">
                 <h1 class="text-3xl text-cyan-400 hover:text-orange-500 hover:underline font-bold text-center pt-4 mb-4"><a href="https://geauxweisbeck4.dev">@GeauxWeisbeck4</a></h1>
@@ -410,9 +641,9 @@ ul {
         </nav>
         </header>
 
-            <div class="w-screen flex flex-col items-center justify-center h-100vh bg-#030F2C">
-      <div class="flex border-b-3 border-emerald-300 pb-20">
-        <div class="flex-1 max-w-5xl ml-20 mr-20">
+            <div class="w-screen flex flex-col items-center justify-center bg-slate-900 h-auto">
+      <div class="flex pb-20 mt-14">
+        <div class="flex-1 max-w-5xl ml-20 mr-20 pt-4">
             <h1 class="text-6xl font-bold mb-6 text-rose-500">Hey y'all! I'm Andrew.</h1>
             <h2 class="text-3xl font-bold mt-2 mb-6 text-sky-300 max-w-xl">Freelance Full Stack Developer, Creator, &amp; Entrepreneur</h2>
             <p class="text-left max-w-xl mb-4 text-slate-50 text-md">
@@ -425,24 +656,214 @@ ul {
 
               Contact me
             </a>
-            <a class="inline-flex items-center justify-center border-3 border-emerald-300 hover:border-pink-500 rounded-md w-60 h-12 bg-pink-500 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold mt-2 px-2 py-2" href="/todo">
-              Create To Do List
+            <a class="inline-flex items-center justify-center border-3 border-emerald-300 hover:border-pink-500 rounded-md w-60 h-12 bg-pink-500 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold mt-2 px-2 py-2" href="/projects">
+              My Work
             </a>
           </nav>
         </div>
         <p class="mr-20 logo">
-          <img src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670070676/undraw_programming_re_kg9v_iy6ngb.svg" width="500" height="500" title="@GeauxWeisbeck4" alt="me at my coding desk">
+          <img src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670070676/undraw_programming_re_kg9v_iy6ngb.svg" width="500" height="500" title="@GeauxWeisbeck4" alt="me at my coding desk" class="pt-4">
         </p>
       </div>
-      <div class="flex">
-        <div class="flex-1 max-w-5xl ml-20 mr-20">
-          <h1 class="text-4xl font-bold text-emerald-400 mt-10">Featured Projects</h1>
-          <h2 class="text-2xl font-bold mt-4 text-sky-300">Check the full showcase on my <a href="/projects" class="text-yellow-400 hover:text-rose-500">project portfolio page</a></h2>
-          <div class="flex gap-6 flex-col md:flex-row">
 
+
+
+     <!-- Featured Projects -->
+      <div class="py-4">
+        <div class="container m-auto px-6 md:px-12 xl:px-6">
+          <div class="mb-12 space-y-2 text-center pb-6">
+            <h1 class="text-6xl font-bold text-emerald-400 mt-10">Featured Projects</h1>
+            <h2 class="text-2xl font-bold pt-4 text-sky-300">Check the full showcase on my <a href="/projects" class="text-yellow-400 hover:text-rose-500">project portfolio page</a></h2>
           </div>
+          <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
+                 <!-- Card 1 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                   <a href="/projects/huskerjs-dev" target="_blank">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1667805828/default_r15hwh.png" alt="HuskerJS.dev website homepage">
+                   </a>
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         HuskerJS.dev - The College Sports Blogging Platform
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Utilizing JavaScript to create fun and engaging college sports experiences for bloggers and fans.
+                         </p>
+                         <a class="mt-3 text-gray-800" href="/projects/huskerjs-dev">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+
+                 <!-- Card 2 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         International Women's Day 2022: Date, history, significance, theme this year
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         </p>
+                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+
+                 <!-- Card 3 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1637419450536-378d5457abb8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         International Women's Day 2022: Date, history, significance, theme this year
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         </p>
+                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+
+                 <!-- Card 4 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1621352404112-58e2468993a0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         International Women's Day 2022: Date, history, significance, theme this year
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         </p>
+                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+
+                 <!-- Card 5 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1607868894064-2b6e7ed1b324?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         International Women's Day 2022: Date, history, significance, theme this year
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         </p>
+                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+
+                 <!-- Card 6 -->
+                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
+                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1633329712176-4751f52ccc1b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                     <div class="p-3">
+                         <span class="text-sm text-primary">November 19, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         International Women's Day 2022: Date, history, significance, theme this year
+                         </h3>
+                         <p class="text-gray-600 paragraph-normal">
+                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         </p>
+                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                     </div>
+                 </div>
+             </div>
+
         </div>
       </div>
+
+           <!-- Skills Section -->
+           <div class="mx-auto pt-14 pb-2 w-[80vw]">
+              <section class="block">
+                <h2 class="text-5xl text-center text-teal-400 font-bold pt-2 pb-8 px-2">Skills</h2>
+                <ul class="flex flex-wrap flex-1 flex-row items-start m-0 p-0 list-none">
+                
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Python</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 90%">90%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">React</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">JavaScript</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Rust</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 60%">60%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">HTML &amp; CSS</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 100%">100%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Deno</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Node.js</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Next.js</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 90%">90%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">PostgreSQL</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">SQL</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Flask</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
+                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Django</span>
+                <div class="bg-gray-300 rounded-2xl block">
+                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
+                </div>
+                 </li>
+                  
+              </ul></section>
+           </div>
     </div>
 
     </div>
