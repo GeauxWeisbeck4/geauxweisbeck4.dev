@@ -86,10 +86,6 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
 }
-.bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
-}
 .bg-emerald-700 {
   --tw-bg-opacity: 1;
   background-color: rgba(4, 120, 87, var(--tw-bg-opacity));
@@ -97,10 +93,6 @@ ul {
 .hover\:bg-sky-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
-}
-.border-teal-500 {
-  --tw-border-opacity: 1;
-  border-color: rgba(20, 184, 166, var(--tw-border-opacity));
 }
 .border-pink-500 {
   --tw-border-opacity: 1;
@@ -114,9 +106,6 @@ ul {
 }
 .border-3 {
   border-width: 3px;
-}
-.border-b-3 {
-  border-bottom-width: 3px;
 }
 .flex {
   display: -webkit-box;
@@ -176,9 +165,6 @@ ul {
 .ml-4 {
   margin-left: 1rem;
 }
-.mr-8 {
-  margin-right: 2rem;
-}
 .max-h-max {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
@@ -186,6 +172,10 @@ ul {
 }
 .p-2 {
   padding: 0.5rem;
+}
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .py-2 {
   padding-top: 0.5rem;
@@ -195,14 +185,11 @@ ul {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.pl-20 {
-  padding-left: 5rem;
-}
 .pt-4 {
   padding-top: 1rem;
 }
-.pl-24 {
-  padding-left: 6rem;
+.pl-40 {
+  padding-left: 10rem;
 }
 .relative {
   position: relative;
@@ -218,9 +205,9 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
-.text-cyan-400 {
+.text-emerald-500 {
   --tw-text-opacity: 1;
-  color: rgba(34, 211, 238, var(--tw-text-opacity));
+  color: rgba(16, 185, 129, var(--tw-text-opacity));
 }
 .hover\:text-orange-500:hover {
   --tw-text-opacity: 1;
@@ -242,16 +229,19 @@ ul {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
+.w-screen {
+  width: 100vw;
+}
 .w-full {
   width: 100%;
 }</style></head>
   <body>
-    <div class="bg-slate-900 text-slate-50 max-h-max">
-        <header class="border-b-3 border-solid border-teal-500 bg-blue-900 rounded-large">
-        <nav class="relative w-full flex flex-wrap items-center pl-20 justify-between justify-items-center list-none py-2 text-yellow-400">
+    <div class="w-screen bg-slate-900 text-slate-50 max-h-max">
+        <header>
+        <nav class="relative flex flex-wrap items-center px-20 justify-between justify-items-center list-none py-2 text-yellow-400">
             <div class="w-full flex flex-wrap justify-center items-center container-fluid">
-                <h1 class="text-3xl text-cyan-400 hover:text-orange-500 hover:underline font-bold text-center pt-4 mb-4"><a href="https://geauxweisbeck4.dev">@GeauxWeisbeck4</a></h1>
-            <ul class="flex pl-24 mr-auto">
+                <h1 class="text-3xl text-emerald-500 hover:text-orange-500 hover:underline font-bold text-center pt-4 mb-4"><a href="https://geauxweisbeck4.dev">@GeauxWeisbeck4</a></h1>
+            <ul class="flex pl-40 mr-auto">
                 <li class="p-2 ml-4">
                     <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/">Home</a>
                 </li>
@@ -268,10 +258,11 @@ ul {
                     <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/resources">Resources</a>
                 </li>
                 <li class="p-2 ml-4">
-                    <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="https://github.com/geauxweisbeck4"><i class="fa-brands fa-square-github"></i></a>
-            </li></ul>
+                    <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/resources">Docs</a>
+                </li>
+            </ul>
 
-            <a class="border-solid rounded-md border-3 border-pink-500 bg-emerald-700 hover:bg-sky-400 text-white hover:text-slate-900 px-4 py-2 font-bold mr-8" href="/contact">Contact Me</a>
+            <a class="border-solid rounded-md border-3 border-pink-500 bg-emerald-700 hover:bg-sky-400 text-white hover:text-slate-900 py-2 font-bold px-4" href="/contact">Contact Me</a>
             </div>
         </nav>
         </header>

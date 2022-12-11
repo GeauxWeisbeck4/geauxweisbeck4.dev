@@ -122,13 +122,21 @@ ul {
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
+.divide-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(2px * var(--tw-divide-x-reverse));
+  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
+}
+.divide-sky-300 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgba(125, 211, 252, var(--tw-divide-opacity));
+}
+.divide-solid > :not([hidden]) ~ :not([hidden]) {
+  border-style: solid;
+}
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
-}
-.bg-blue-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
 }
 .bg-emerald-700 {
   --tw-bg-opacity: 1;
@@ -146,21 +154,9 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(236, 72, 153, var(--tw-bg-opacity));
 }
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-}
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
-}
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgba(14, 165, 233, var(--tw-bg-opacity));
-}
-.border-teal-500 {
-  --tw-border-opacity: 1;
-  border-color: rgba(20, 184, 166, var(--tw-border-opacity));
 }
 .border-pink-500 {
   --tw-border-opacity: 1;
@@ -178,6 +174,10 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
+.border-sky-800 {
+  --tw-border-opacity: 1;
+  border-color: rgba(7, 89, 133, var(--tw-border-opacity));
+}
 .rounded-md {
   border-radius: 0.375rem;
 }
@@ -186,9 +186,6 @@ ul {
 }
 .rounded-lg {
   border-radius: 0.5rem;
-}
-.rounded-2xl {
-  border-radius: 1rem;
 }
 .border-solid {
   border-style: solid;
@@ -199,18 +196,11 @@ ul {
 .border {
   border-width: 1px;
 }
-.border-b-3 {
-  border-bottom-width: 3px;
-}
-.box-border {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+.border-5 {
+  border-width: 5px;
 }
 .block {
   display: block;
-}
-.inline-block {
-  display: inline-block;
 }
 .flex {
   display: -webkit-box;
@@ -228,16 +218,6 @@ ul {
   display: -ms-grid;
   display: grid;
 }
-.basis-1\/2 {
-  flex-basis: 50%;
-}
-.flex-row {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-}
 .flex-col {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -249,12 +229,6 @@ ul {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-.items-start {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
 }
 .items-center {
   -webkit-box-align: center;
@@ -298,6 +272,9 @@ ul {
 .h-56 {
   height: 14rem;
 }
+.h-96 {
+  height: 24rem;
+}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -310,17 +287,17 @@ ul {
   font-size: 3.75rem;
   line-height: 1;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .leading-6 {
   line-height: 1.5rem;
@@ -328,11 +305,15 @@ ul {
 .list-none {
   list-style-type: none;
 }
+.list-disc {
+  list-style-type: disc;
+}
 .m-auto {
   margin: auto;
 }
-.m-0 {
-  margin: 0px;
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .my-10 {
   margin-top: 2.5rem;
@@ -342,10 +323,6 @@ ul {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -354,9 +331,6 @@ ul {
 }
 .ml-4 {
   margin-left: 1rem;
-}
-.mr-8 {
-  margin-right: 2rem;
 }
 .mt-14 {
   margin-top: 3.5rem;
@@ -378,6 +352,9 @@ ul {
 }
 .mr-4 {
   margin-right: 1rem;
+}
+.mt-4 {
+  margin-top: 1rem;
 }
 .mb-12 {
   margin-bottom: 3rem;
@@ -415,8 +392,9 @@ ul {
 .p-3 {
   padding: 0.75rem;
 }
-.p-0 {
-  padding: 0px;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .py-2 {
   padding-top: 0.5rem;
@@ -438,44 +416,28 @@ ul {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.pl-20 {
-  padding-left: 5rem;
-}
 .pt-4 {
   padding-top: 1rem;
 }
-.pl-24 {
-  padding-left: 6rem;
+.pl-40 {
+  padding-left: 10rem;
 }
 .pb-20 {
   padding-bottom: 5rem;
 }
+.pr-12 {
+  padding-right: 3rem;
+}
 .pb-6 {
   padding-bottom: 1.5rem;
-}
-.pt-14 {
-  padding-top: 3.5rem;
-}
-.pb-2 {
-  padding-bottom: 0.5rem;
-}
-.pt-2 {
-  padding-top: 0.5rem;
-}
-.pb-8 {
-  padding-bottom: 2rem;
 }
 .relative {
   position: relative;
@@ -485,6 +447,20 @@ ul {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);
   -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+.hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0/0.1),0 4px 6px -4px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+.shadow-sky-300 {
+  --tw-shadow-color: rgba(125, 211, 252, 1);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.hover\:shadow-sky-200:hover {
+  --tw-shadow-color: rgba(186, 230, 253, 1);
+  --tw-shadow: var(--tw-shadow-colored);
 }
 .text-left {
   text-align: left;
@@ -500,9 +476,9 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(251, 191, 36, var(--tw-text-opacity));
 }
-.text-cyan-400 {
+.text-emerald-500 {
   --tw-text-opacity: 1;
-  color: rgba(34, 211, 238, var(--tw-text-opacity));
+  color: rgba(16, 185, 129, var(--tw-text-opacity));
 }
 .hover\:text-orange-500:hover {
   --tw-text-opacity: 1;
@@ -520,10 +496,6 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(15, 23, 42, var(--tw-text-opacity));
 }
-.text-rose-500 {
-  --tw-text-opacity: 1;
-  color: rgba(244, 63, 94, var(--tw-text-opacity));
-}
 .text-sky-300 {
   --tw-text-opacity: 1;
   color: rgba(125, 211, 252, var(--tw-text-opacity));
@@ -532,55 +504,78 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(52, 211, 153, var(--tw-text-opacity));
 }
-.hover\:text-rose-500:hover {
+.hover\:text-sky-300:hover {
   --tw-text-opacity: 1;
-  color: rgba(244, 63, 94, var(--tw-text-opacity));
+  color: rgba(125, 211, 252, var(--tw-text-opacity));
 }
-.text-gray-700 {
+.text-emerald-600 {
   --tw-text-opacity: 1;
-  color: rgba(55, 65, 81, var(--tw-text-opacity));
+  color: rgba(5, 150, 105, var(--tw-text-opacity));
 }
-.text-gray-600 {
+.dark .dark\:text-white {
   --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgba(31, 41, 55, var(--tw-text-opacity));
 }
-.text-teal-400 {
+.text-gray-500 {
   --tw-text-opacity: 1;
-  color: rgba(45, 212, 191, var(--tw-text-opacity));
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+.dark .dark\:text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+}
+.dark .dark\:text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgba(96, 165, 250, var(--tw-text-opacity));
+}
+.hover\:text-rose-500:hover {
+  --tw-text-opacity: 1;
+  color: rgba(244, 63, 94, var(--tw-text-opacity));
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
 }
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
-.w-full {
-  width: 100%;
+.no-underline {
+  text-decoration: none;
+}
+.tracking-wider {
+  letter-spacing: 0.05em;
 }
 .w-screen {
   width: 100vw;
 }
+.w-full {
+  width: 100%;
+}
 .w-60 {
   width: 15rem;
 }
-.w-1\/2 {
-  width: 50%;
+.gap-8 {
+  grid-gap: 2rem;
+  gap: 2rem;
 }
-.w-\[80vw\] {
-  width: 80vw;
+.gap-6 {
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
 }
-.gap-5 {
-  grid-gap: 1.25rem;
-  gap: 1.25rem;
-}
-.ease-in-out {
-  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 @media (min-width: 768px) {
+  .md\:mt-16 {
+    margin-top: 4rem;
+  }
   .md\:max-w-none {
     max-width: none;
   }
@@ -593,30 +588,57 @@ ul {
   }
 }
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
   .lg\:h-60 {
     height: 15rem;
   }
-  .lg\:gap-7 {
-    grid-gap: 1.75rem;
-    gap: 1.75rem;
+  .lg\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .lg\:mx-6 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .lg\:w-64 {
+    width: 16rem;
+  }
+  .lg\:gap-12 {
+    grid-gap: 3rem;
+    gap: 3rem;
   }
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (min-width: 1280px) {
+  .xl\:mt-12 {
+    margin-top: 3rem;
+  }
   .xl\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .xl\:gap-12 {
+    grid-gap: 3rem;
+    gap: 3rem;
+  }
+  .xl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }</style></head>
   <body>
-    <div class="bg-slate-900 text-slate-50 max-h-max">
-        <header class="border-b-3 border-solid border-teal-500 bg-blue-900 rounded-large">
-        <nav class="relative w-full flex flex-wrap items-center pl-20 justify-between justify-items-center list-none py-2 text-yellow-400">
+    <div class="w-screen bg-slate-900 text-slate-50 max-h-max">
+        <header>
+        <nav class="relative flex flex-wrap items-center px-20 justify-between justify-items-center list-none py-2 text-yellow-400">
             <div class="w-full flex flex-wrap justify-center items-center container-fluid">
-                <h1 class="text-3xl text-cyan-400 hover:text-orange-500 hover:underline font-bold text-center pt-4 mb-4"><a href="https://geauxweisbeck4.dev">@GeauxWeisbeck4</a></h1>
-            <ul class="flex pl-24 mr-auto">
+                <h1 class="text-3xl text-emerald-500 hover:text-orange-500 hover:underline font-bold text-center pt-4 mb-4"><a href="https://geauxweisbeck4.dev">@GeauxWeisbeck4</a></h1>
+            <ul class="flex pl-40 mr-auto">
                 <li class="p-2 ml-4">
                     <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/">Home</a>
                 </li>
@@ -633,10 +655,11 @@ ul {
                     <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/resources">Resources</a>
                 </li>
                 <li class="p-2 ml-4">
-                    <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="https://github.com/geauxweisbeck4"><i class="fa-brands fa-square-github"></i></a>
-            </li></ul>
+                    <a class="text-xl text-slate-50 hover:text-sky-400 font-semibold" href="/resources">Docs</a>
+                </li>
+            </ul>
 
-            <a class="border-solid rounded-md border-3 border-pink-500 bg-emerald-700 hover:bg-sky-400 text-white hover:text-slate-900 px-4 py-2 font-bold mr-8" href="/contact">Contact Me</a>
+            <a class="border-solid rounded-md border-3 border-pink-500 bg-emerald-700 hover:bg-sky-400 text-white hover:text-slate-900 py-2 font-bold px-4" href="/contact">Contact Me</a>
             </div>
         </nav>
         </header>
@@ -644,20 +667,27 @@ ul {
             <div class="w-screen flex flex-col items-center justify-center bg-slate-900 h-auto">
       <div class="flex pb-20 mt-14">
         <div class="flex-1 max-w-5xl ml-20 mr-20 pt-4">
-            <h1 class="text-6xl font-bold mb-6 text-rose-500">Hey y'all! I'm Andrew.</h1>
+            <h1 class="text-6xl font-bold mb-6 text-emerald-500">Hey y'all! I'm Andrew.</h1>
             <h2 class="text-3xl font-bold mt-2 mb-6 text-sky-300 max-w-xl">Freelance Full Stack Developer, Creator, &amp; Entrepreneur</h2>
             <p class="text-left max-w-xl mb-4 text-slate-50 text-md">
-              I'm currently working as a free lance developer and am open to any new opportunities
+              I'm currently working as a freelance web developer in Raleigh, NC and am open to any new opportunities. I am proficient in JavaScript, Python, HTML, CSS, and am learning Rust.
             </p>
 
+          <ul class="flex items-center justify-center pt-4 divide-x-2 divide-sky-300 divide-solid pr-12">
+            <li><a href="https://github.com/geauxweisbeck4" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">GitHub</a></li>
+            <li><a href="https://fosstodon.org/@GeauxWeisbeck4" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">Mastodon</a></li>
+            <li><a href="https://medium.com/@geauxweisbeck4" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">Medium</a></li>
+            <li><a href="https://www.twitch.tv/geauxweisbeck4" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">Twitch</a></li>
+            <li><a href="https://geauxweisbeck4.substack.com/" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">Substack</a></li>
+            <li><a href="https://www.youtube.com/channel/UC8S2Rk7U83DnGaT3EibIREw" target="_blank" class="text-emerald-400 hover:text-sky-300 font-bold no-underline px-4">YouTube</a></li>
+          </ul>
 
           <nav class="mt-8 mb-4">
             <a class="inline-flex items-center justify-center border-3 border-pink-500 rounded hover:border-emerald-700 w-60 h-12 mr-4 mt-2 bg-emerald-700 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold px-2 py-2" href="/contact">
-
               Contact me
             </a>
             <a class="inline-flex items-center justify-center border-3 border-emerald-300 hover:border-pink-500 rounded-md w-60 h-12 bg-pink-500 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold mt-2 px-2 py-2" href="/projects">
-              My Work
+              My Resume
             </a>
           </nav>
         </div>
@@ -665,6 +695,137 @@ ul {
           <img src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670070676/undraw_programming_re_kg9v_iy6ngb.svg" width="500" height="500" title="@GeauxWeisbeck4" alt="me at my coding desk" class="pt-4">
         </p>
       </div>
+
+    <!-- Blog Posts/Notes -->
+<section class="py-4">
+    <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-center text-6xl font-bold text-emerald-600 capitalize lg:text-4xl">Recent Blog Posts</h1>
+        <h2 class="text-center text-3xl font-bold mt-4 text-sky-300">Top posts from all of my various blogs</h2>
+
+        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-emerald-600 hover:underline dark:text-white">
+                        How to use sticky note for problem solving
+                    </a>
+
+                    <span class="text-sm text-sky-300">On: 20 October 2019</span>
+                </div>
+            </div>
+
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                        How to use sticky note for problem solving
+                    </a>
+
+                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                </div>
+            </div>
+
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1544654803-b69140b285a1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                        Morning routine to boost your mood
+                    </a>
+
+                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 25 November 2020</span>
+                </div>
+            </div>
+
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1547&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                        All the features you want to know
+                    </a>
+
+                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 30 September 2020</span>
+                </div>
+            </div>
+
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1484&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                        Minimal workspace for your inspirations
+                    </a>
+
+                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 13 October 2019</span>
+                </div>
+            </div>
+
+            <div class="lg:flex">
+                <img class="object-cover w-full h-56 rounded-lg lg:w-64" src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
+                        What do you want to know about Blockchane
+                    </a>
+
+                    <span class="text-sm text-gray-500 dark:text-gray-300">On: 20 October 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- Services Offered -->
+<section class="py-4">
+    <div class="container mx-auto px-6 py-10">
+        <h1 class="text-center text-6xl font-bold text-emerald-500 lg:text-4xl">Offering Next Gen Solutions</h1>
+        <h2 class="text-center text-3xl font-bold mt-4 text-sky-300">Quality full stack development, marketing, and design services</h2>
+        <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12">
+        <div>
+            <img class="h-96 w-full rounded-lg object-cover" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670640932/static_assets_eayp2b.png" alt="Static Assets">
+            <h2 class="mt-4 text-2xl font-semibold capitalize text-emerald-500">Full-Stack Web Development</h2>
+            <p class="mt-2 text-xl uppercase tracking-wider text-sky-300 dark:text-blue-400">Static Websites, Mobile, Progressive, and Native Apps</p>
+              <ul class="list-disc mt-4">
+                <li class="text-lg text-slate-50">I build with Deno by default, but can use any runtime or language you want - i.e. Python, Bun, Node.js, Ruby</li>
+                <li class="text-lg text-slate-50">React &amp; Next.js, Ember.js, Angular, Svelte, Django &amp; Flask</li>
+                <li class="text-lg text-slate-50">Netlify, Shopify, and Storyblok CMS Partners.</li>
+              </ul>
+        </div>
+
+        <div>
+            <img class="h-96 w-full rounded-lg object-cover" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670722113/undraw_heatmap_uyye_1_qnmld2.png" alt="Heatmap design services">
+            <h2 class="mt-4 text-2xl font-semibold capitalize text-emerald-500">UI/UX Research &amp; Design Services</h2>
+            <p class="mt-2 text-lg uppercase tracking-wider text-sky-300 dark:text-blue-400">Custom Templates, Components, and Graphics</p>
+              <ul class="list-disc mt-4">
+                <li class="text-lg text-slate-50">Shop templates and components - coming soon</li>
+                <li class="text-lg text-slate-50">Optimize and create graphics, photos, logos and other digital art</li>
+                <li class="text-lg text-slate-50">Design infographics, cards, and other content related graphic design</li>
+              </ul>
+        </div>
+
+        <div>
+            <img class="h-96 w-full rounded-lg object-cover" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670722577/undraw_Content_team_re_6rlg_cjsbz7.png" alt="content creation">
+            <h2 class="mt-4 text-2xl font-semibold capitalize text-emerald-500">Technical Writing/Content Creation</h2>
+            <p class="mt-2 text-lg uppercase tracking-wider text-sky-300 dark:text-blue-400">Blog posts, technical documentation, and courses/tutorials</p>
+            <ul class="list-disc mt-4">
+              <li class="text-lg text-slate-50">Create blog posts following SEO best practices</li>
+              <li class="text-lg text-slate-50">Documentation that your team and others will find easy to read</li>
+              <li class="text-lg text-slate-50">Can provide any type of writing and/or content such as ebooks, magazines, or essays</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+
 
 
 
@@ -675,96 +836,106 @@ ul {
             <h1 class="text-6xl font-bold text-emerald-400 mt-10">Featured Projects</h1>
             <h2 class="text-2xl font-bold pt-4 text-sky-300">Check the full showcase on my <a href="/projects" class="text-yellow-400 hover:text-rose-500">project portfolio page</a></h2>
           </div>
-          <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 my-10">
+          <div class="grid justify-center md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 my-10">
                  <!-- Card 1 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                   <a href="/projects/huskerjs-dev" target="_blank">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1667805828/default_r15hwh.png" alt="HuskerJS.dev website homepage">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                   <a href="https://huskerjs.dev" target="_blank">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670302205/darkhuskerjs_iiidgq.png" alt="HuskerJS.dev website homepage">
                    </a>
                      <div class="p-3">
                          <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
                          HuskerJS.dev - The College Sports Blogging Platform
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
+                         <p class="text-white paragraph-normal">
                          Utilizing JavaScript to create fun and engaging college sports experiences for bloggers and fans.
                          </p>
-                         <a class="mt-3 text-gray-800" href="/projects/huskerjs-dev">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="/projects/huskerjs-dev">Read More &gt;&gt;</a>
                      </div>
                  </div>
 
                  <!-- Card 2 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                    <a href="https://geaux-quotes.netlify.app" target="_blank">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670301982/geauxrandomnotegenerator_ap4azm.png" alt="Geaux Random Quotes Generator">
+                     </a>
                      <div class="p-3">
                          <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                         International Women's Day 2022: Date, history, significance, theme this year
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
+                         Geaux's Random Quotes Generator
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
-                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         <p class="text-white paragraph-normal">
+                         Created with JavaScript, a custom API, and deployed to Netlify. Uses Vanilla HTML, CSS, and JavaScript with Hero Patterns.
                          </p>
-                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="/projects/geaux-quotes">Read More &gt;&gt;</a>
                      </div>
                  </div>
 
                  <!-- Card 3 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1637419450536-378d5457abb8?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                   <a href="https://geauxrecipes.netlify.app/" target="_blank">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670383263/geaux-recipes_kqwvxr.png" alt="Geaux-Recipes Cookbook App">
+                   </a>
                      <div class="p-3">
                          <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                         International Women's Day 2022: Date, history, significance, theme this year
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
+                         Geaux-Recipes Cookbook App
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
-                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         <p class="text-white paragraph-normal">
+                         A recipes app, built with 11ty. Lisa and I share our favorite recipes on this application.
                          </p>
-                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="/projects/geaux-recipes">Read More &gt;&gt;</a>
                      </div>
                  </div>
 
                  <!-- Card 4 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1621352404112-58e2468993a0?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                   <a href="https://tarheelwindows.netlify.app/">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670383224/tarheelwindowashin_lsx7yv.png" alt="Tar Heel Window Washing Home Page">
+                   </a>
                      <div class="p-3">
                          <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                         International Women's Day 2022: Date, history, significance, theme this year
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
+                         Tar Heel Window Washin'
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
-                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         <p class="text-white paragraph-normal">
+                         A local window washing business that Lisa and I started here in Raleigh.
                          </p>
-                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="/projects/tar-heel-windows">Read More &gt;&gt;</a>
                      </div>
                  </div>
 
                  <!-- Card 5 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1607868894064-2b6e7ed1b324?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                   <a href="https://geauxengagingproducts.vercel.app/">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670390628/productengagementsprint_ps22gy.png" alt="Geaux Engaging Products Website">
+                   </a>
                      <div class="p-3">
                          <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                         International Women's Day 2022: Date, history, significance, theme this year
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
+                         Geaux Engaging Products
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
-                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         <p class="text-white paragraph-normal">
+                         My blog website that follows my experience in the Section 4 Product Engagement Sprint.
                          </p>
-                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="#">Read More &gt;&gt;</a>
                      </div>
                  </div>
 
                  <!-- Card 6 -->
-                 <div class="bg-white rounded-lg border shadow-md max-w-xs md:max-w-none overflow-hidden">
-                     <img class="h-56 lg:h-60 w-full object-cover" src="https://images.unsplash.com/photo-1633329712176-4751f52ccc1b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHdvbWVuJTIwZW1wb3dlcm1lbnR8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+                 <div class="bg-sky-500 rounded-lg border shadow-md hover:shadow-lg shadow-sky-300 hover:shadow-sky-200 max-w-xs md:max-w-none overflow-hidden">
+                   <a href="https://geauxweisbeck4.deno.dev">
+                     <img class="h-56 lg:h-60 w-full object-cover border-5 border-sky-800" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670401591/denoblog_nc3xwt.png" alt="My Deno Blog">
+                   </a>
                      <div class="p-3">
-                         <span class="text-sm text-primary">November 19, 2022</span>
-                         <h3 class="font-semibold text-xl leading-6 text-gray-700 my-2">
-                         International Women's Day 2022: Date, history, significance, theme this year
+                         <span class="text-sm text-primary">October 14, 2022</span>
+                         <h3 class="font-semibold text-xl leading-6 text-white my-2">
+                         GeauxWeisbeck4.dev Deno Blog
                          </h3>
-                         <p class="text-gray-600 paragraph-normal">
-                         Happy Women's Day 2022: Read on to know all about the history and significance...
+                         <p class="text-white paragraph-normal">
+                         My personal blog for this website was created with the <a href="https://github.com/denoland/deno_blog">Deno Blog</a> package and is rad.
                          </p>
-                         <a class="mt-3 block" href="#">Read More &gt;&gt;</a>
+                         <a class="mt-3 block text-white" href="/projects/geaux-deno-blog">Read More &gt;&gt;</a>
                      </div>
                  </div>
              </div>
@@ -772,98 +943,10 @@ ul {
         </div>
       </div>
 
-           <!-- Skills Section -->
-           <div class="mx-auto pt-14 pb-2 w-[80vw]">
-              <section class="block">
-                <h2 class="text-5xl text-center text-teal-400 font-bold pt-2 pb-8 px-2">Skills</h2>
-                <ul class="flex flex-wrap flex-1 flex-row items-start m-0 p-0 list-none">
-                
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Python</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 90%">90%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">React</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">JavaScript</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Rust</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 60%">60%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">HTML &amp; CSS</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 100%">100%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Deno</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Node.js</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Next.js</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 90%">90%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">PostgreSQL</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">SQL</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Flask</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-                <li class="basis-1/2 w-1/2 py-6 px-4 box-border grow shrink">
-                  <span class="py-1 px-0 pb-6 inline-block text-3xl font-bold">Django</span>
-                <div class="bg-gray-300 rounded-2xl block">
-                  <span class="p-2 block rounded-2xl font-bold bg-sky-500 ease-in-out" style="width: 80%">80%</span>
-                </div>
-                 </li>
-                  
-              </ul></section>
-           </div>
+
+
+
+           <!-- Contact Form -->
     </div>
 
     </div>
