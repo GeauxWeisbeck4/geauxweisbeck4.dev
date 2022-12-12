@@ -77,10 +77,42 @@ h1, h2 {
   font-size: inherit;
   font-weight: inherit;
 }
+svg {
+  display: block;
+  vertical-align: middle;
+}
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }
 .bg-slate-900 {
   --tw-bg-opacity: 1;
@@ -94,12 +126,23 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
 }
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
 .border-pink-500 {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
 .rounded-md {
   border-radius: 0.375rem;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .border-solid {
   border-style: solid;
@@ -112,6 +155,19 @@ ul {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+.inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 .flex-wrap {
   -ms-flex-wrap: wrap;
@@ -139,11 +195,37 @@ ul {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
+.flex-grow {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+.flex-shrink-0 {
+  -ms-flex-negative: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.order-first {
+  -webkit-box-ordinal-group: -9998;
+  -webkit-order: -9999;
+  -ms-flex-order: -9999;
+  order: -9999;
+}
 .font-bold {
   font-weight: 700;
 }
 .font-semibold {
   font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-5 {
+  height: 1.25rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -153,8 +235,16 @@ ul {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .list-none {
   list-style-type: none;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -164,6 +254,27 @@ ul {
 }
 .ml-4 {
   margin-left: 1rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.-mb-10 {
+  margin-bottom: -2.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
 }
 .max-h-max {
   max-height: -webkit-max-content;
@@ -184,6 +295,18 @@ ul {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -225,15 +348,124 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(15, 23, 42, var(--tw-text-opacity));
 }
+.text-sky-300 {
+  --tw-text-opacity: 1;
+  color: rgba(125, 211, 252, var(--tw-text-opacity));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-text-opacity));
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+.hover\:text-gray-800:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 .w-screen {
   width: 100vw;
 }
 .w-full {
   width: 100%;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+@media (min-width: 640px) {
+  .sm\:flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .sm\:justify-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .sm\:ml-auto {
+    margin-left: auto;
+  }
+  .sm\:mt-0 {
+    margin-top: 0px;
+  }
+  .sm\:text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .md\:flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .md\:flex-nowrap {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .md\:items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .md\:justify-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+  .md\:pr-20 {
+    padding-right: 5rem;
+  }
+  .md\:text-left {
+    text-align: left;
+  }
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:items-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
 }</style></head>
   <body>
     <div class="w-screen bg-slate-900 text-slate-50 max-h-max">
@@ -283,6 +515,120 @@ ul {
 <h2>Star if you like my site! Thank you!</h2>
 
 
+        <footer class="text-sky-300 body-font">
+          <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+              <a class="flex font-medium items-center md:justify-start justify-center text-sky-300 title-font">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewbox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">GeauxWeisbeck4</span>
+              </a>
+              <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+              <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Footer —
+                <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@MrsRobbot</a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </footer>
     </div>
   
 

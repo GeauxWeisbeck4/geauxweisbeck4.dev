@@ -1,33 +1,32 @@
 ---
 title: About Page
-description:
-links:
-  - text: My Twitter
-    url: https://twitter.com/geauxweisbeck4
-  - text: My GitHub profile
-    url: https://github.com/geauxweisbeck4
+description: All about Andrew Weisbeck
 ---
 
-<main>
-  <header class="mb-10 mt-10">
-    <h1 class="text-4xl text-rose-500 font-bold ml-8 mt-6 mb-1">I'm a 31 Year Old Full Stack Developer</h1>
-    <h2 class="text-3xl text-sky-300 font-bold ml-16 mb-1">Currently living in Raleigh, NC with my partner and best friend Lisa</h2>
-    <h3 class="text-2xl text-emerald-500 font-bold ml-32 mb-1">My ideal tech stack is Deno, React, and an SSG with SSR like Next.js, Astro JS, or Qwik City</h3>
-    <h4 class="text-xl text-orange-400 font-bold ml-48 mb-1">My favorite hobbies are skiing, reading, writing, watching sports, messing around with my Raspberry Pi and coding side projects</h4>
-    <h3 class="text-2xl text-emerald-500 font-bold ml-32 mb-1">I am outgoing and love being around people, but would consider myself to be an ambivert</h3>
-    <h2 class="text-3xl text-sky-300 font-bold ml-16 mb-1">Lisa and I have a dog named Magnolia as well as two cats, Beaux & Zu</h2>
-    <h1 class="text-4xl text-rose-500 font-bold ml-8 mb-1">Seeking employment & freelance clients</h1>
-  </header>
+<div class="w-screen flex flex-col items-center justify-center bg-slate-900 h-auto">
+  <div class="flex pb-20 mt-14">
+    <div class="flex-1 max-w-5xl ml-20 mr-20 pt-10">
+      <h1 class="text-4xl text-emerald-500 font-bold ml-8 mt-6 mb-6">I'm Andrew, a 31 Year Old Full Stack Developer</h1>
+      <h2 class="text-3xl text-sky-300 font-bold ml-8 mb-6">Currently living in Raleigh, NC with my partner and best friend Lisa. We have a dog, Magnolia, and two cats - Beaux and Zubi.</h2>
+      <p class="text-lg text-slate-50 font-bold ml-8 mb-1">My ideal tech stack is Deno, React, PostgreSQL, Prisma, Next.js and TailwindCSS. I have a digital agency/creative studio I started called Tar Heel Dev Studio and that is where I try to get most of my freelance work through,
+      but do get job requests on this portfolio page as well. My goal is to be able to hire another developer within the next year so I can share some of the burden of work with another person!
+      If you need to get a hold of me or have any questions, please don't hesitate to fill out my contact form or email me, both which you can do by clicking the corresponding button below.</p>
+
+      <nav class="mt-14 ml-8 mb-4">
+        <a class="inline-flex items-center justify-center border-3 border-pink-500 rounded hover:border-emerald-700 w-60 h-12 mr-4 mt-2 bg-emerald-700 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold px-2 py-2" href="/contact">
+        Contact me
+        </a>
+        <a class="inline-flex items-center justify-center border-3 border-emerald-600 hover:border-pink-500 rounded-md w-60 h-12 bg-pink-500 hover:bg-sky-300 text-slate-50 hover:text-slate-900 font-bold mt-2 px-2 py-2" href="/projects">
+        Email Me
+        </a>
+      </nav>
+
+
+    </div>
+   <img src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670863573/aboutme2_n3rqfw.png" class="pb-10 pt-10 pr-20 shadow-xl" />
+  </div>
+</div>
 
 
 
-  <ul>
-    {% for link in links %}
-    <li>
-      <a href="{{ link.url }}">
-        {{ link.text }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</main>
+

@@ -65,22 +65,77 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
+button {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  text-transform: none;
+  background-color: transparent;
+  background-image: none;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+button, [type='button'], [type='reset'], [type='submit'] {
+  -webkit-appearance: button;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
 html {
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   line-height: 1.5;
 }
-h1, p {
+h1, h2, p {
   margin: 0;
 }
-h1 {
+h1, h2 {
   font-size: inherit;
   font-weight: inherit;
+}
+img {
+  border-style: solid;
+  max-width: 100%;
+  height: auto;
+}
+img, svg {
+  display: block;
+  vertical-align: middle;
 }
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+.container {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
 }
 .bg-slate-900 {
   --tw-bg-opacity: 1;
@@ -94,12 +149,46 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
 }
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.bg-indigo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(99, 102, 241, var(--tw-bg-opacity));
+}
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
 .border-pink-500 {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
+.border-indigo-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(99, 102, 241, var(--tw-border-opacity));
+}
+.border-cyan-600 {
+  --tw-border-opacity: 1;
+  border-color: rgba(8, 145, 178, var(--tw-border-opacity));
+}
+.border-indigo-900 {
+  --tw-border-opacity: 1;
+  border-color: rgba(49, 46, 129, var(--tw-border-opacity));
+}
+.border-sky-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(14, 165, 233, var(--tw-border-opacity));
+}
 .rounded-md {
   border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .border-solid {
   border-style: solid;
@@ -107,11 +196,30 @@ ul {
 .border-3 {
   border-width: 3px;
 }
+.border-5 {
+  border-width: 5px;
+}
+.border-b-4 {
+  border-bottom-width: 4px;
+}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+.inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+.flex-col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 .flex-wrap {
   -ms-flex-wrap: wrap;
@@ -139,11 +247,46 @@ ul {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
+.flex-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
+}
+.flex-grow {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+}
+.flex-shrink-0 {
+  -ms-flex-negative: 0;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.order-first {
+  -webkit-box-ordinal-group: -9998;
+  -webkit-order: -9999;
+  -ms-flex-order: -9999;
+  order: -9999;
+}
 .font-bold {
   font-weight: 700;
 }
 .font-semibold {
   font-weight: 600;
+}
+.font-medium {
+  font-weight: 500;
+}
+.h-auto {
+  height: auto;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-5 {
+  height: 1.25rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -153,8 +296,28 @@ ul {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 .list-none {
   list-style-type: none;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -165,13 +328,68 @@ ul {
 .ml-4 {
   margin-left: 1rem;
 }
+.mt-14 {
+  margin-top: 3.5rem;
+}
+.ml-20 {
+  margin-left: 5rem;
+}
+.mr-20 {
+  margin-right: 5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
+}
+.-mb-10 {
+  margin-bottom: -2.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .max-h-max {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
 }
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.object-fill {
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
 .p-2 {
   padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .px-20 {
   padding-left: 5rem;
@@ -185,11 +403,26 @@ ul {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
 .pl-40 {
   padding-left: 10rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
 }
 .relative {
   position: relative;
@@ -225,15 +458,147 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(15, 23, 42, var(--tw-text-opacity));
 }
+.text-sky-300 {
+  --tw-text-opacity: 1;
+  color: rgba(125, 211, 252, var(--tw-text-opacity));
+}
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgba(15, 23, 42, var(--tw-text-opacity));
+}
+.text-indigo-100 {
+  --tw-text-opacity: 1;
+  color: rgba(224, 231, 255, var(--tw-text-opacity));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgba(17, 24, 39, var(--tw-text-opacity));
+}
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+.hover\:text-gray-800:hover {
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+}
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 .w-screen {
   width: 100vw;
 }
 .w-full {
   width: 100%;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+@media (min-width: 640px) {
+  .sm\:flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .sm\:justify-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .sm\:ml-auto {
+    margin-left: auto;
+  }
+  .sm\:mt-0 {
+    margin-top: 0px;
+  }
+  .sm\:text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .md\:flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+  .md\:flex-nowrap {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .md\:items-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .md\:justify-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+  .md\:-mx-6 {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+  .md\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+  .md\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .md\:pr-20 {
+    padding-right: 5rem;
+  }
+  .md\:text-left {
+    text-align: left;
+  }
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:items-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+  .lg\:w-1\/4 {
+    width: 25%;
+  }
 }</style></head>
   <body>
     <div class="w-screen bg-slate-900 text-slate-50 max-h-max">
@@ -267,11 +632,278 @@ ul {
         </nav>
         </header>
 
-            <h1>Andrew's Portfolio</h1>
-<p>If you like my work, let me know about it! If you want help building something, I offer tutoring. <br>
-   If you want to collaborate, let's build something awesome together!</p>
+            <div class="w-screen flex flex-col items-center justify-center bg-slate-900 h-auto">
+      <div class="flex pb-20 mt-14">
+        <div class="flex-1 max-w-5xl ml-20 mr-20 pt-4">
+            <h1 class="text-6xl font-bold mb-10 text-emerald-500">My Projects</h1>
+            <h2 class="text-3xl font-bold mt-2 mb-6 text-sky-300 max-w-xl">Here are some projects I've completed and others that I'm currently working on</h2>
+        </div>
+      </div>
 
+ 		<div class="container flex flex-col items-center justify-center min-h-screen mx-auto">
 
+ 			<!-- experience -->
+ 			<div class="w-full">
+ 				<div class="mb-2 text-2xl font-medium">Completed Projects</div>
+ 				<div class="flex flex-wrap overflow-hidden md:-mx-6">
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670739105/geauxweisbeck4version2_zixpq0.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">GeauxWeisbeck4.dev</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  This is GeauxWeisbeck4.dev created wtih Deno and Lume
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670302205/darkhuskerjs_iiidgq.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">HuskerJS.dev</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  College football blogging platform.
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670301982/geauxrandomnotegenerator_ap4azm.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium">Geaux's Random Quote Generator</div>
+ 								<p class="mb-4">
+ 								  A random quote generator made with vanilla JavaScript.
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+                                    Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670383263/geaux-recipes_kqwvxr.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">Geaux Recipes App</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  My recipe book app.
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670390628/productengagementsprint_ps22gy.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">The Product Engagement Sprint Blog</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  This blog follow my adventures in the Section 4 Product Engagement Sprint
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670401591/denoblog_nc3xwt.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">GeauxWeisbeck4.deno.dev Blog</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  This is my blog I made with the Deno blog repository and also the blog for this website
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg">
+ 								   Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-indigo-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670876146/anloj_u0kpmp.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">Andrew Weisbeck Daily Log Blog</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  An 11ty blog I made to log my daily dev activities.
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg" href="https://andrewweisbeck-blog.netlify.app/" target="_blank">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- card -->
+ 					<div class="w-full my-2 overflow-hidden md:my-6 md:px-6 md:w-1/2 lg:w-1/3">
+ 						<div class="bg-white border-b-4 border-sky-500 rounded-lg">
+ 							<img class="object-fill w-full border-5 border-cyan-600" src="https://res.cloudinary.com/tar-heel-dev-studio/image/upload/v1670383224/tarheelwindowashin_lsx7yv.png" alt="placeholder">
+
+ 							<div class="p-4">
+ 								<div class="mb-2 text-xl font-medium text-slate-900">Tar Heel Window Washin'</div>
+ 								<p class="mb-4 text-slate-900">
+ 								  A website for Lisa and I's window washing business.
+ 								</p>
+ 								<button class="px-4 py-2 text-indigo-100 bg-indigo-500 border-indigo-900 rounded-lg" href="https://tarheelwindows.netlify.app/">
+ 								  Check it out!
+ 								</button>
+ 							</div>
+ 						</div>
+ 					</div>
+ 					<!-- end card -->
+ 					<!-- Card -->
+
+ 				</div>
+ 			</div>
+ 			<!-- end experience -->
+ 			</div>
+ 		</div>
+
+        <footer class="text-sky-300 body-font">
+          <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
+              <a class="flex font-medium items-center md:justify-start justify-center text-sky-300 title-font">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewbox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">GeauxWeisbeck4</span>
+              </a>
+              <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+              <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                <h2 class="font-medium text-gray-900 tracking-widest text-sm mb-3 title-font">CATEGORIES</h2>
+                <nav class="list-none mb-10">
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  </li>
+                  <li>
+                    <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  </li>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+              <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Footer —
+                <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@MrsRobbot</a>
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewbox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewbox="0 0 24 24">
+                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </div>
+        </footer>
     </div>
   
 
