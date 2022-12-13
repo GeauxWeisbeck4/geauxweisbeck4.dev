@@ -2,7 +2,7 @@
 <html lang="en"><head>
     <meta charset="utf-9">
     <meta name="viewport" content="width=device-width, initial-scale=0.0">
-    <title></title>
+    <title>Contact Me | GeauxWeisbeck4.dev</title>
     <meta name="description" content="">
     <script src="https://kit.fontawesome.com/c8e842a55c.js" crossorigin="anonymous"></script>
     <!-- kaption.co -->
@@ -81,14 +81,14 @@ html {
   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   line-height: 1.5;
 }
-h1, p, h2 {
+h1, h2, p {
   margin: 0;
 }
 h1, h2 {
   font-size: inherit;
   font-weight: inherit;
 }
-input, button {
+input, textarea, button {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -120,6 +120,29 @@ input::-ms-input-placeholder {
 svg {
   display: block;
   vertical-align: middle;
+}
+textarea {
+  resize: vertical;
+}
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+textarea::webkit-input-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+textarea::-moz-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+textarea:-ms-input-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+textarea::-ms-input-placeholder {
+  opacity: 1;
+  color: #9ca3af;
 }
 ul {
   list-style: none;
@@ -164,6 +187,11 @@ ul {
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
+.appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgba(15, 23, 42, var(--tw-bg-opacity));
@@ -175,6 +203,26 @@ ul {
 .hover\:bg-sky-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
+}
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}
+.focus\:bg-white:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.bg-teal-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(45, 212, 191, var(--tw-bg-opacity));
+}
+.hover\:bg-pink-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(244, 114, 182, var(--tw-bg-opacity));
+}
+.focus\:bg-teal-700:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgba(15, 118, 110, var(--tw-bg-opacity));
 }
 .bg-gray-50 {
   --tw-bg-opacity: 1;
@@ -204,6 +252,26 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(236, 72, 153, var(--tw-border-opacity));
 }
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+.focus\:border-gray-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(107, 114, 128, var(--tw-border-opacity));
+}
+.border-pink-400 {
+  --tw-border-opacity: 1;
+  border-color: rgba(244, 114, 182, var(--tw-border-opacity));
+}
+.hover\:border-teal-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(45, 212, 191, var(--tw-border-opacity));
+}
+.focus\:border-pink-700:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(190, 24, 93, var(--tw-border-opacity));
+}
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgba(59, 130, 246, var(--tw-border-opacity));
@@ -219,6 +287,9 @@ ul {
 .rounded-md {
   border-radius: 0.375rem;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-full {
   border-radius: 9999px;
 }
@@ -233,6 +304,9 @@ ul {
 }
 .disabled\:cursor-not-allowed:disabled {
   cursor: not-allowed;
+}
+.block {
+  display: block;
 }
 .flex {
   display: -webkit-box;
@@ -279,6 +353,12 @@ ul {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
+.flex-1 {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
+}
 .flex-grow {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
@@ -305,6 +385,12 @@ ul {
 .font-medium {
   font-weight: 500;
 }
+.h-auto {
+  height: auto;
+}
+.h-48 {
+  height: 12rem;
+}
 .h-10 {
   height: 2.5rem;
 }
@@ -319,6 +405,10 @@ ul {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -331,12 +421,19 @@ ul {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.leading-tight {
+  line-height: 1.25;
+}
 .list-none {
   list-style-type: none;
 }
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.-mx-3 {
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -347,23 +444,38 @@ ul {
 .ml-4 {
   margin-left: 1rem;
 }
+.mt-14 {
+  margin-top: 3.5rem;
+}
+.ml-20 {
+  margin-left: 5rem;
+}
+.mr-20 {
+  margin-right: 5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
 .mt-10 {
   margin-top: 2.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
-}
 .-mb-10 {
   margin-bottom: -2.5rem;
-}
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -373,11 +485,23 @@ ul {
   max-height: -moz-max-content;
   max-height: max-content;
 }
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.max-w-lg {
+  max-width: 32rem;
+}
 .max-w-screen-sm {
   max-width: 640px;
 }
 .max-w-md {
   max-width: 28rem;
+}
+.min-h-screen {
+  min-height: 100vh;
 }
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
@@ -400,6 +524,14 @@ ul {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .py-30 {
   padding-top: 7.5rem;
@@ -427,8 +559,24 @@ ul {
 .pl-40 {
   padding-left: 10rem;
 }
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
 .relative {
   position: relative;
+}
+.resize-none {
+  resize: none;
+}
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+.focus\:shadow-outline:focus {
+  
+  --tw-shadow: var(--tw-shadow-colored);
 }
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -484,6 +632,10 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(125, 211, 252, var(--tw-text-opacity));
 }
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+}
 .hover\:text-rose-500:hover {
   --tw-text-opacity: 1;
   color: rgba(244, 63, 94, var(--tw-text-opacity));
@@ -508,9 +660,15 @@ ul {
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
+.uppercase {
+  text-transform: uppercase;
+}
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 .tracking-normal {
   letter-spacing: 0em;
@@ -596,6 +754,12 @@ ul {
   }
 }
 @media (min-width: 768px) {
+  .md\:flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
   .md\:flex-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -632,6 +796,12 @@ ul {
   }
   .md\:text-left {
     text-align: left;
+  }
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
   .md\:w-1\/2 {
     width: 50%;
@@ -690,7 +860,54 @@ ul {
         </nav>
         </header>
 
-            
+            <div class="w-screen flex flex-col items-center justify-center bg-slate-900 h-auto">
+      <div class="flex pb-6 mt-14">
+        <div class="flex-1 max-w-5xl ml-20 mr-20 pt-4">
+            <h1 class="text-6xl font-bold mb-10 text-emerald-500">Contact Me</h1>
+            <h2 class="text-3xl font-bold mt-2 mb-6 text-sky-300 max-w-xl">Got a question or want a quote? Fill out the form below and I'll get back to you ASAP.</h2>
+         </div>
+      </div>
+
+      <div class="container flex flex-col items-center justify-center min-h-screen mx-auto">
+
+
+         <form class="w-full max-w-lg data-netlify=" true"="">
+                  <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                      <label class="block uppercase tracking-wide text-emerald-500 text-3xl font-bold mb-2" for="grid-password">
+                        First and Last Name
+                      </label>
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nick" type="text">
+
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                    <label class="block uppercase tracking-wide text-emerald-500 text-3xl font-bold mb-2" for="grid-password">
+                      E-mail
+                    </label>
+                      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email">
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                      <label class="block uppercase tracking-wide text-emerald-500 text-3xl font-bold mb-2" for="grid-password">
+                          Message
+                      </label>
+                      <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none no-resize" id="message"></textarea>
+                    </div>
+                  </div>
+                  <div class="md:flex md:items-center">
+                    <div class="md:w-1/3">
+                      <button class="shadow bg-teal-400 hover:bg-pink-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded border-3 border-pink-400 hover:border-teal-400 focus:bg-teal-700 focus:border-pink-700" type="button">
+                          Send
+                      </button>
+                    </div>
+                  <div class="md:w-2/3"></div>
+                </div>
+         </form>
+      </div>
+</div>
 
 
         <div class="container mx-auto px-4 py-30 sm:px-6 xl:px-12">
