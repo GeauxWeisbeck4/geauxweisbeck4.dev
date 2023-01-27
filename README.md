@@ -1,12 +1,23 @@
 # GeauxWeisbeck4.dev Version 2.0
 
-The Second version of GeauxWeisbeck4.dev. Version 2.0 was built with Deno and Lume, an awesome Static Site Generator. I spent a lot of time debating between Aleph.js and  Fresh, but ultimately Lume was the most familiar and worked the best for this project.
+Ehh this was implemented poorly. I am disgusted at the efforts put into this - it's time for a do over. I can make a way sick website if I put some more effort into this. I am going to begin work on this shortly
 
-## Why the tech stack and why a new website?
-
-Well I am absolutely in love with Deno now and will use it unless I have no other choice to. I chose Lume because it made it easy to create a portfolio site in a reasonable amount of time - any other framework has me sitting there for to long messing around with what I want to do with my personal site. I know that probably makes no sense and it probably doesn't. That's ADHD for you.
-
-When I finally settled on what technology I would use for the site, I sort of just went at coding it without designing a layout or anything. I don't recommend that to anyone, but it kind of worked for now. I am going to continue to tidy this project up but I like it so far. Nothing too special, but it gets the job done.
+## Potential Tech Choices
+- Deno
+  - [ ] Aleph.js
+  - [ ] Fresh
+  - [ ] Ultra.js
+  - [ ] ~~Lume~~
+  - [ ] Oak
+- Node.js
+  - [ ] Gatsby
+  - [ ] Next.js
+  - [ ] Nuxt
+  - [ ] Svelte Kit
+  - [ ] Astro
+  - [ ] 11ty
+  - [ ] Hugo
+  - [ ] Jekyll
 
 ## Features to be implemented...
 
