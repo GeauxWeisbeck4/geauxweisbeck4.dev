@@ -1,6 +1,6 @@
 # GeauxWeisbeck4.dev Version 2.0
 
-Ehh this was implemented poorly. I am disgusted at the efforts put into this - it's time for a do over. I can make a way sick website if I put some more effort into this. I am going to begin work on this shortly
+This is still a work in progress - please ask if you have any questions about my portfolio!
 
 ## Potential Tech Choices
 - Deno
